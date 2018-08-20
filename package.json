@@ -1,0 +1,20 @@
+{
+  "name": "plover",
+  "version": "1.0.0",
+  "description": "Awesome wallpapers change dynamically for osx",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . --platform=darwin --ignore=.gitignore --overwrite --icon=asset/icon.icns"
+  },
+  "author": "Chuang Yu <cyu9960@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^2.0.7",
+    "electron-packager": "^12.1.1"
+  },
+  "dependencies": {
+    "glob": "^7.1.2",
+    "request": "^2.88.0"
+  }
+}

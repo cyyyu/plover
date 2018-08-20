@@ -1,0 +1,118 @@
+<html>
+
+<head>
+  <title>Plover</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      cursor: default;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0 0;
+      padding: 0 0;
+    }
+
+    div {
+      background: white;
+      box-shadow: 0 0 10px black;
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      font-size: 14px;
+      padding: 6 6px;
+      margin: 0 auto 6px auto;
+      border-radius: 4px;
+      width: 180px;
+      height: 24px;
+      border: 1px solid #d4d4d4;
+      background: none;
+    }
+
+    input:focus,
+    input:active {
+      outline: none;
+    }
+
+    button#change {
+      width: 180px;
+      margin: 0 auto 12px auto;
+      height: 28px;
+      border: none;
+      background: black;
+      color: white;
+      font-size: 14px;
+      border-radius: 4px;
+      transition: all .15s;
+      box-shadow: 0 4px 10px rgb(60, 60, 60);
+    }
+
+    button#change:hover {
+      box-shadow: 0 2.5px 10px rgb(60, 60, 60);
+    }
+
+    button#change:focus,
+    button#change:active {
+      outline: none;
+    }
+
+    button#change:active {
+      box-shadow: none;
+    }
+
+    button#change.loading {
+      background: white;
+      color: rgb(201, 201, 201);
+      box-shadow: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    .spinner {
+      display: block;
+      width: 14px;
+      height: 14px;
+      background-color: #222;
+      border-radius: 100%;
+      animation: spin 1.0s infinite ease-in-out;
+      margin: auto 6px;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1.0);
+        opacity: 0;
+      }
+    }
+
+
+    a#quit {
+      margin-top: 12px;
+      margin-left: auto;
+      margin-right: 12px;
+      margin-bottom: 6px;
+      font-size: 12px;
+      color: grey;
+    }
+  </style>
+  <script src="./index.js"></script>
+</head>
+
+<body>
+  <div>
+    <a id="quit">Quit</a>
+    <input type="text" placeholder="Keywords" />
+    <button id="change">Change Now!</button>
+  </div>
+</body>
+
+</html>
