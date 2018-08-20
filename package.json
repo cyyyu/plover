@@ -1,7 +1,7 @@
 {
   "name": "plover",
   "version": "1.0.0",
-  "description": "Awesome wallpapers change dynamically for osx",
+  "description": "Awesome wallpapers from Unsplash on your desktop",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
