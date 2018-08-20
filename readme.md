@@ -1,4 +1,4 @@
-# Plover
+# <img src="./asset/logo.png" width="44" /> Plover
 
 > Awesome wallpapers from Unsplash on your desktop
 
