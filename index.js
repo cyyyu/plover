@@ -6,8 +6,10 @@ function init() {
   const changeBtn = document.querySelector("button#change");
   const input = document.querySelector("input");
   const quitBtn = document.querySelector("a#quit");
-  const lastValue = localStorage.getItem("keywords");
 
+  // Store the query string in localStorage
+  // and fill the input when app restarts
+  const lastValue = localStorage.getItem("keywords");
   if (lastValue) {
     input.value = lastValue;
   }
