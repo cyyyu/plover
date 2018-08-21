@@ -6,6 +6,7 @@ function init() {
   const changeBtn = document.querySelector("button#change");
   const input = document.querySelector("input");
   const quitBtn = document.querySelector("a#quit");
+  const errorMsg = document.querySelector("a.error");
 
   // Store the query string in localStorage
   // and fill the input when app restarts
@@ -43,5 +44,15 @@ function init() {
     changeBtn.classList.remove("loading");
     changeBtn.textContent = "Change Now!";
     changeBtn.removeChild(changeBtn.querySelector("span"));
+  });
+
+  ipcRenderer.on("error", () => {
+    changeBtn.classList.remove("loading");
+    changeBtn.textContent = "Change Now!";
+    changeBtn.removeChild(changeBtn.querySelector("span"));
+
+    // Display an error msg and remove it after 3s
+    errorMsg.classList.add("visible");
+    setTimeout(() => errorMsg.classList.remove("visible"), 3000);
   });
 }

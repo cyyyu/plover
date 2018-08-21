@@ -14,9 +14,14 @@ app.on("window-all-closed", () => {
 });
 
 ipcMain.on("update background", (e, val) => {
-  changeBg(val).then(() => {
-    e.sender.send("changed");
-  });
+  changeBg(val)
+    .then(() => {
+      e.sender.send("changed");
+    })
+    .catch(() => {
+      // Network error
+      e.sender.send("error");
+    });
 });
 
 function init() {
