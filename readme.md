@@ -2,6 +2,8 @@
 
 > Awesome wallpapers from Unsplash on your desktop
 
+Plover is a menubar app for MacOS. It's based on Electron.
+
 ![screenshot](./screenshot.gif)
 
 ## Download
