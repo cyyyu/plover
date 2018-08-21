@@ -21,11 +21,6 @@ function init() {
     localStorage.setItem("keywords", value);
     changeBtn.classList.add("loading");
     changeBtn.textContent = "";
-
-    // Append a spinner
-    const spinner = document.createElement("span");
-    spinner.classList.add("spinner");
-    changeBtn.appendChild(spinner);
   });
 
   // Remove and reset placeholder
@@ -43,13 +38,11 @@ function init() {
   ipcRenderer.on("changed", () => {
     changeBtn.classList.remove("loading");
     changeBtn.textContent = "Change Now!";
-    changeBtn.removeChild(changeBtn.querySelector("span"));
   });
 
   ipcRenderer.on("error", () => {
     changeBtn.classList.remove("loading");
     changeBtn.textContent = "Change Now!";
-    changeBtn.removeChild(changeBtn.querySelector("span"));
 
     // Display an error msg and remove it after 3s
     errorMsg.classList.add("visible");
