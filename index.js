@@ -36,11 +36,17 @@ function init() {
   });
 
   ipcRenderer.on("changed", () => {
+    // Enable input
+    input.removeAttribute("disabled");
+
     changeBtn.classList.remove("loading");
     changeBtn.textContent = "Change Now!";
   });
 
   ipcRenderer.on("error", () => {
+    // Enable input
+    input.removeAttribute("disabled");
+
     changeBtn.classList.remove("loading");
     changeBtn.textContent = "Change Now!";
 
@@ -50,6 +56,9 @@ function init() {
   });
 
   function changeBackground() {
+    // Disable input
+    input.setAttribute("disabled", true);
+
     const value = input.value;
     ipcRenderer.send("update background", value);
     localStorage.setItem("keywords", value);

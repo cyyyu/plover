@@ -32,13 +32,20 @@ input {
   border-radius: 4px;
   width: 180px;
   height: 24px;
-  border: 1px solid #d4d4d4;
+  border: 1px solid #5f5f5f;
   background: none;
+  transition: all 0.2s;
 }
 
 input:focus,
 input:active {
   outline: none;
+}
+
+input:disabled {
+  user-select: none;
+  color: #929292;
+  border-color: rgb(224, 224, 224);
 }
 
 button#change {
