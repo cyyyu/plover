@@ -30,7 +30,7 @@ function init() {
 
   window = new BrowserWindow({
     width: 200,
-    height: 104,
+    height: 102,
     show: false,
     frame: false,
     resizable: false,
