@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "dev": "PLOVER_ENV=development electron .",
     "package": "electron-packager . --platform=darwin --ignore=.gitignore --overwrite --icon=asset/icon.icns"
   },
   "author": "Chuang Yu <cyu9960@gmail.com>",

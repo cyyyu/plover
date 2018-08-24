@@ -2,6 +2,8 @@ const { app, BrowserWindow, ipcMain, Tray } = require("electron");
 const path = require("path");
 const changeBg = require("./lib/changeBg");
 
+const DEV_MODE = process.env.PLOVER_ENV === "development";
+
 let tray = undefined;
 let window = undefined;
 
@@ -29,13 +31,15 @@ function init() {
   tray.on("click", toggleWindow);
 
   window = new BrowserWindow({
-    width: 200,
-    height: 102,
-    show: false,
+    width: DEV_MODE ? 800 : 200,
+    height: DEV_MODE ? 600 : 102,
+    show: DEV_MODE ? true : false,
     frame: false,
     resizable: false,
     icon: path.join(__dirname, "icon.icns")
   });
+
+  DEV_MODE && window.webContents.openDevTools();
 
   window.loadURL(`file://${path.join(__dirname, "index.html")}`);
 
