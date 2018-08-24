@@ -15,13 +15,7 @@ function init() {
     input.value = lastValue;
   }
 
-  changeBtn.addEventListener("click", () => {
-    const value = input.value;
-    ipcRenderer.send("update background", value);
-    localStorage.setItem("keywords", value);
-    changeBtn.classList.add("loading");
-    changeBtn.textContent = "";
-  });
+  changeBtn.addEventListener("click", changeBackground);
 
   // Remove and reset placeholder
   input.addEventListener("focus", () => {
@@ -29,6 +23,12 @@ function init() {
   });
   input.addEventListener("blur", () => {
     input.setAttribute("placeholder", "Keywords");
+  });
+  input.addEventListener("keyup", e => {
+    // Triger changeBackground when 'enter' pressed
+    if (e.keyCode === 13) {
+      changeBackground();
+    }
   });
 
   quitBtn.addEventListener("click", () => {
@@ -48,4 +48,12 @@ function init() {
     errorMsg.classList.add("visible");
     setTimeout(() => errorMsg.classList.remove("visible"), 3000);
   });
+
+  function changeBackground() {
+    const value = input.value;
+    ipcRenderer.send("update background", value);
+    localStorage.setItem("keywords", value);
+    changeBtn.classList.add("loading");
+    changeBtn.textContent = "";
+  }
 }
