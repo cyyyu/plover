@@ -80,7 +80,7 @@ button#change.loading:after {
   display: block;
   width: 14px;
   height: 14px;
-  background-color: #222;
+  background-color: #f00;
   border-radius: 100%;
   animation: spin 1s infinite ease-in-out;
   margin: auto 6px;
