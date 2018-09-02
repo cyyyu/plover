@@ -27,7 +27,7 @@ ipcMain.on("update background", (e, val) => {
 });
 
 function init() {
-  tray = new Tray(path.join(__dirname, "asset", "image-opacity3.png"));
+  tray = new Tray(path.join(__dirname, "asset", "plover-icon.png"));
   tray.on("click", toggleWindow);
 
   window = new BrowserWindow({
