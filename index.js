@@ -20,7 +20,7 @@ function init() {
     input.setAttribute("placeholder", "");
   });
   input.addEventListener("blur", () => {
-    input.setAttribute("placeholder", "Keywords");
+    input.setAttribute("placeholder", 'Try "beach,sunset"!');
   });
   input.addEventListener("keyup", (e) => {
     // Triger changeBackground when 'enter' pressed

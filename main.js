@@ -8,7 +8,7 @@ let tray = undefined;
 let window = undefined;
 
 // Hide the dock icon
-app.dock.hide();
+DEV_MODE || app.dock.hide();
 
 app.on("ready", init);
 app.on("window-all-closed", () => {
