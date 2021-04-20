@@ -20,9 +20,9 @@ ipcMain.on("update background", (e, val) => {
     .then(() => {
       e.sender.send("changed");
     })
-    .catch(() => {
+    .catch((e) => {
       // Network error
-      e.sender.send("error");
+      e.sender.send("error", e);
     });
 });
 
@@ -36,7 +36,13 @@ function init() {
     show: DEV_MODE ? true : false,
     frame: false,
     resizable: false,
-    icon: path.join(__dirname, "icon.icns")
+    icon: path.join(__dirname, "icon.icns"),
+    webPreferences: {
+      nodeIntegration: false,
+      contextIsolation: true,
+      enableRemoteModule: true,
+      preload: path.join(__dirname, "lib", "preload.js"),
+    },
   });
 
   DEV_MODE && window.webContents.openDevTools();

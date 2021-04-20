@@ -1,5 +1,3 @@
-const { ipcRenderer, remote } = require("electron");
-
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
@@ -24,7 +22,7 @@ function init() {
   input.addEventListener("blur", () => {
     input.setAttribute("placeholder", "Keywords");
   });
-  input.addEventListener("keyup", e => {
+  input.addEventListener("keyup", (e) => {
     // Triger changeBackground when 'enter' pressed
     if (e.keyCode === 13) {
       changeBackground();
@@ -32,10 +30,10 @@ function init() {
   });
 
   quitBtn.addEventListener("click", () => {
-    remote.getCurrentWindow().close();
+    window.api.closeWindow();
   });
 
-  ipcRenderer.on("changed", () => {
+  window.api.receive("changed", () => {
     // Enable input
     input.removeAttribute("disabled");
 
@@ -43,7 +41,7 @@ function init() {
     changeBtn.textContent = "Change Now!";
   });
 
-  ipcRenderer.on("error", () => {
+  window.api.receive("error", () => {
     // Enable input
     input.removeAttribute("disabled");
 
@@ -60,7 +58,7 @@ function init() {
     input.setAttribute("disabled", true);
 
     const value = input.value;
-    ipcRenderer.send("update background", value);
+    window.api.send("update background", value);
     localStorage.setItem("keywords", value);
     changeBtn.classList.add("loading");
     changeBtn.textContent = "";
