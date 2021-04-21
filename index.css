@@ -21,6 +21,7 @@ div.outer {
   background: rgb(250, 250, 250);
   box-shadow: 0 0 4px black;
   width: 200px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 4px;
@@ -29,12 +30,11 @@ div.outer {
 input {
   font-size: 14px;
   padding: 6 6px;
-  margin: 0 auto 6px auto;
+  margin: 0 auto 12px auto;
   border-radius: 4px;
   width: 180px;
   height: 24px;
-  border: none;
-  background: rgb(255, 251, 229);
+  background: rgb(255, 250, 240);
   transition: all 0.2s;
 }
 
@@ -53,11 +53,10 @@ button#change {
   font-size: 14px;
   border-radius: 4px;
   transition: all 0.15s;
-  box-shadow: 0 4px 6px rgb(60, 60, 60);
 }
 
 button#change:hover {
-  box-shadow: 0 2.5px 6px rgb(60, 60, 60);
+  box-shadow: 0 2.5px 6px rgb(160, 160, 160);
 }
 
 button#change:focus,

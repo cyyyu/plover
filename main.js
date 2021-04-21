@@ -32,7 +32,7 @@ function init() {
 
   window = new BrowserWindow({
     width: DEV_MODE ? 800 : 200,
-    height: DEV_MODE ? 600 : 102,
+    height: DEV_MODE ? 600 : 114,
     show: DEV_MODE ? true : false,
     frame: false,
     resizable: false,

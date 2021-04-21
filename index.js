@@ -6,6 +6,12 @@ function init() {
   const quitBtn = document.querySelector("a#quit");
   const errorMsg = document.querySelector("a.error");
 
+  // auto focus
+  input.focus();
+
+  // default keywords
+  input.value = "night,stars";
+
   // Store the query string in localStorage
   // and fill the input when app restarts
   const lastValue = localStorage.getItem("keywords");
@@ -15,13 +21,6 @@ function init() {
 
   changeBtn.addEventListener("click", changeBackground);
 
-  // Remove and reset placeholder
-  input.addEventListener("focus", () => {
-    input.setAttribute("placeholder", "");
-  });
-  input.addEventListener("blur", () => {
-    input.setAttribute("placeholder", 'Try "beach,sunset"!');
-  });
   input.addEventListener("keyup", (e) => {
     // Triger changeBackground when 'enter' pressed
     if (e.keyCode === 13) {
