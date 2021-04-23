@@ -37,7 +37,6 @@ function init() {
     input.removeAttribute("disabled");
 
     changeBtn.classList.remove("loading");
-    changeBtn.textContent = "Change Now!";
   });
 
   window.api.receive("error", () => {
@@ -45,7 +44,6 @@ function init() {
     input.removeAttribute("disabled");
 
     changeBtn.classList.remove("loading");
-    changeBtn.textContent = "Change Now!";
 
     // Display an error msg and remove it after 3s
     errorMsg.classList.add("visible");
@@ -60,6 +58,5 @@ function init() {
     window.api.send("update background", value);
     localStorage.setItem("keywords", value);
     changeBtn.classList.add("loading");
-    changeBtn.textContent = "";
   }
 }

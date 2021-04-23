@@ -36,6 +36,7 @@ input {
   height: 24px;
   background: rgb(255, 250, 240);
   transition: all 0.2s;
+  outline-color: #a179b9;
 }
 
 input:disabled {
@@ -48,53 +49,39 @@ button#change {
   margin: 0 auto 12px auto;
   height: 28px;
   border: none;
-  background: black;
+  background-image: radial-gradient(
+    circle at 8.37% 61.15%,
+    #93417b 0,
+    #843575 16.67%,
+    #72256e 33.33%,
+    #5c1064 50%,
+    #45005b 66.67%,
+    #2e0054 83.33%,
+    #14004f 100%
+  );
   color: white;
   font-size: 14px;
   border-radius: 4px;
-  transition: all 0.15s;
+  transition: all 0.3s;
+  position: relative;
 }
 
 button#change:hover {
-  box-shadow: 0 2.5px 6px rgb(160, 160, 160);
+  box-shadow: 0 2.5px 6px #565454;
 }
 
 button#change:focus,
 button#change:active {
   outline: none;
-}
-
-button#change:active {
   box-shadow: none;
 }
 
 button#change.loading {
-  color: rgb(201, 201, 201);
-  box-shadow: none;
-  display: flex;
-  justify-content: center;
-  background: transparent;
+  background: #2e0054;
+  color: #a179b9;
 }
-
-button#change.loading:after {
-  content: "";
+button#change.loading .loader {
   display: block;
-  width: 14px;
-  height: 14px;
-  background-color: #f00;
-  border-radius: 100%;
-  animation: spin 1s infinite ease-in-out;
-  margin: auto 6px;
-}
-
-@keyframes spin {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
 }
 
 .top {
@@ -121,4 +108,56 @@ a.error {
 
 a.error.visible {
   display: block;
+}
+
+/* spinner https://projects.lukehaas.me/css-loaders/ */
+.loader {
+  display: none;
+  color: #ffffff;
+  font-size: 2px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: load4 1.3s infinite linear;
+  transform: translateZ(0);
+  position: absolute;
+  top: 14px;
+  right: 22px;
+}
+@keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
+      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
+      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
 }
