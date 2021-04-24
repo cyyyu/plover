@@ -1,6 +1,6 @@
 {
   "name": "plover",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Awesome wallpapers from Unsplash on your desktop",
   "main": "main.js",
   "scripts": {
