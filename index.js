@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
   const changeBtn = document.querySelector("button#change");
   const input = document.querySelector("input");
-  const quitBtn = document.querySelector("a#quit");
+  const quitBtn = document.querySelector("#quit");
   const errorMsg = document.querySelector("a.error");
 
   // auto focus

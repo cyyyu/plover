@@ -32,10 +32,10 @@ function init() {
 
   window = new BrowserWindow({
     width: DEV_MODE ? 800 : 200,
-    height: DEV_MODE ? 600 : 112,
+    height: DEV_MODE ? 300 : 112,
     show: DEV_MODE ? true : false,
     frame: DEV_MODE ? true : false,
-    resizable: false,
+    resizable: DEV_MODE ? true : false,
     icon: path.join(__dirname, "icon.icns"),
     webPreferences: {
       nodeIntegration: false,
