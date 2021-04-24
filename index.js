@@ -4,7 +4,7 @@ function init() {
   const changeBtn = document.querySelector("button#change");
   const input = document.querySelector("input");
   const quitBtn = document.querySelector("#quit");
-  const errorMsg = document.querySelector("a.error");
+  const errorMsg = document.querySelector("#error");
 
   // auto focus
   input.focus();

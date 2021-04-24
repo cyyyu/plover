@@ -21,7 +21,7 @@ div.outer {
   background: rgb(250, 250, 250);
   box-shadow: 0 0 4px black;
   width: 200px;
-  height: 112px;
+  height: 106px;
   display: flex;
   flex-direction: column;
   border-radius: 4px;
@@ -30,7 +30,7 @@ div.outer {
 input {
   font-size: 14px;
   padding: 2px 2px;
-  margin: 0 auto 12px auto;
+  margin: 0 auto 10px auto;
   border-radius: 4px;
   width: 180px;
   height: 24px;
@@ -39,7 +39,7 @@ input {
   border-color: #14004f;
   transition: all 0.2s;
   outline-color: #a179b9;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 input:disabled {
@@ -49,7 +49,7 @@ input:disabled {
 
 button#change {
   width: 180px;
-  margin: 0 auto 12px auto;
+  margin: 0 auto;
   height: 28px;
   border: none;
   background-image: radial-gradient(
@@ -89,8 +89,8 @@ button#change.loading .loader {
 
 .top {
   display: flex;
-  margin-top: 12px;
-  margin-bottom: 6px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   flex-direction: row;
 }
 
@@ -98,36 +98,48 @@ button#change.loading .loader {
   margin-left: auto;
   margin-right: 12px;
   font-size: 12px;
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  border: 2px solid #c7c7c7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all .3s;
+  width: 14px;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 2px;
+  position: relative;
 }
-#quit:hover {
-  border-color: #d62f69ba;
+#quit div {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 100px;
+  height: 1.5px;
+  transform-origin: center center;
+  background-color: #45005b96;
 }
-#quit svg {
-  fill: #c7c7c7;
-  transition: all .3s;
+#quit div:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
 }
-#quit:hover svg {
-  fill: #d62f69ba;
-}
-
-a.error {
-  display: none;
-  margin-right: auto;
-  margin-left: 12px;
-  font-size: 12px;
-  color: rgb(236, 87, 87);
+#quit div:last-child {
+  transform: translate(-50%, -50%) rotate(135deg);
 }
 
-a.error.visible {
-  display: block;
+#error {
+  display: inline-block;
+  opacity: 0;
+  position: absolute;
+  font-size: 16px;
+  font-weight: bolder;
+  text-align: center;
+  right: 14px;
+  top: 5px;
+  height: 18px;
+  width: 18px;
+  border-radius: 18px;
+  line-height: 18px;
+  color: white;
+  background: red;
+  transition: all .3s;
+}
+
+#error.visible {
+  opacity: 1;
 }
 
 /* spinner https://projects.lukehaas.me/css-loaders/ */

@@ -20,9 +20,9 @@ ipcMain.on("update background", (e, val) => {
     .then(() => {
       e.sender.send("changed");
     })
-    .catch((e) => {
+    .catch((err) => {
       // Network error
-      e.sender.send("error", e);
+      e.sender.send("error", err);
     });
 });
 
@@ -32,7 +32,7 @@ function init() {
 
   window = new BrowserWindow({
     width: DEV_MODE ? 800 : 200,
-    height: DEV_MODE ? 300 : 112,
+    height: DEV_MODE ? 300 : 106,
     show: DEV_MODE ? true : false,
     frame: DEV_MODE ? true : false,
     resizable: DEV_MODE ? true : false,
